@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdowonc5l5ejy"]
+
+[ext_resource type="Script" path="res://Dot.gd" id="1_lxp3e"]
+
+[node name="Dot" type="Node2D"]
+z_index = 100
+script = ExtResource("1_lxp3e")

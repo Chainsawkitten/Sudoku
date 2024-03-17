@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn6krd5mik3bp"]
+
+[ext_resource type="PackedScene" uid="uid://ccl0hc23omdho" path="res://CloseButton.tscn" id="1_qel4w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yq462"]
+font_size = 19
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3gw4"]
+font_size = 9
+font_color = Color(0, 0, 0, 1)
+
+[node name="Controls" type="Node2D"]
+
+[node name="Outer" type="ColorRect" parent="."]
+z_index = 100
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -82.0
+offset_right = 200.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="Inner" type="ColorRect" parent="Outer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -80.0
+offset_right = 198.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="Label" parent="Outer/Inner"]
+layout_mode = 1
+offset_right = 396.0
+offset_bottom = 27.0
+text = "Controls"
+label_settings = SubResource("LabelSettings_yq462")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Message" type="Label" parent="Outer/Inner"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 4.0
+offset_top = 30.0
+offset_right = 392.0
+offset_bottom = 430.0
+text = "Use the mouse or arrow keys to select cells. Hold Shift or Ctrl when selecting cells to add to the current selection.
+Press 1-9 to enter values into the selected cells. Hold Ctrl to enter center values. Hold Shift to enter corner values.
+Undo with Ctrl+Z and redo with Ctrl+Y.
+The rules of the puzzle are listed on the right side. Press the ? next to a rule to get a visual example showing how it works.
+If you are stuck, press the Hint button to get a hint on how to proceed."
+label_settings = SubResource("LabelSettings_k3gw4")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" parent="Outer/Inner" instance=ExtResource("1_qel4w")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.969697
+anchor_top = 0.0125
+anchor_right = 0.969697
+anchor_bottom = 0.0125

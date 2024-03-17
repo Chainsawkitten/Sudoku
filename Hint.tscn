@@ -1,0 +1,141 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbxxgo2tmw8dg"]
+
+[ext_resource type="Script" path="res://Hint.gd" id="1_mh67q"]
+[ext_resource type="PackedScene" uid="uid://ccl0hc23omdho" path="res://CloseButton.tscn" id="2_k8jbe"]
+[ext_resource type="PackedScene" uid="uid://ci68t2bmlga16" path="res://Grid.tscn" id="3_lvw63"]
+[ext_resource type="Script" path="res://PageTurn.gd" id="4_lgdgy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3gw4"]
+font_size = 9
+font_color = Color(0, 0, 0, 1)
+
+[node name="Hint" type="Node2D"]
+script = ExtResource("1_mh67q")
+
+[node name="Outer" type="ColorRect" parent="."]
+z_index = 100
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="Inner" type="ColorRect" parent="Outer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.485714
+anchor_right = 0.5
+anchor_bottom = 0.485714
+offset_left = -173.0
+offset_top = -168.0
+offset_right = 173.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Message" type="Label" parent="Outer/Inner"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0115607
+anchor_top = 0.731214
+anchor_right = 0.427746
+anchor_bottom = 0.83815
+offset_top = 30.0
+offset_right = 196.0
+offset_bottom = 53.0
+text = "Those cages sure were helpful!"
+label_settings = SubResource("LabelSettings_k3gw4")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" parent="Outer/Inner" instance=ExtResource("2_k8jbe")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.965318
+anchor_top = 0.00578032
+anchor_right = 0.965318
+anchor_bottom = 0.00578032
+
+[node name="Grid" parent="Outer/Inner" instance=ExtResource("3_lvw63")]
+position = Vector2(47, 10)
+scale = Vector2(0.7, 0.7)
+
+[node name="PageLeft" type="ColorRect" parent="Outer/Inner"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 132.0
+offset_right = 37.0
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+script = ExtResource("4_lgdgy")
+direction = -1
+
+[node name="ColorRect" type="ColorRect" parent="Outer/Inner/PageLeft"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 33.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="Outer/Inner/PageLeft"]
+position = Vector2(0, 10)
+rotation = -0.785398
+
+[node name="ColorRect2" type="ColorRect" parent="Outer/Inner/PageLeft/Node2D"]
+offset_right = 13.0
+offset_bottom = 4.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Outer/Inner/PageLeft/Node2D"]
+offset_right = 4.0
+offset_bottom = 13.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PageRight" type="ColorRect" parent="Outer/Inner"]
+visible = false
+layout_mode = 0
+offset_left = 309.0
+offset_top = 132.0
+offset_right = 342.0
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+script = ExtResource("4_lgdgy")
+
+[node name="ColorRect" type="ColorRect" parent="Outer/Inner/PageRight"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 30.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="Outer/Inner/PageRight"]
+position = Vector2(34, 10)
+rotation = 2.35619
+
+[node name="ColorRect2" type="ColorRect" parent="Outer/Inner/PageRight/Node2D"]
+offset_right = 13.0
+offset_bottom = 4.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Outer/Inner/PageRight/Node2D"]
+offset_right = 4.0
+offset_bottom = 13.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

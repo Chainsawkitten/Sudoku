@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccl0hc23omdho"]
+
+[ext_resource type="Script" path="res://CloseButton.gd" id="1_a0bns"]
+
+[node name="CloseButton" type="ColorRect"]
+offset_right = 10.0
+offset_bottom = 10.0
+mouse_default_cursor_shape = 2
+color = Color(0.713726, 0.121569, 0.121569, 1)
+script = ExtResource("1_a0bns")
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(5, 4)
+rotation = 0.785398
+
+[node name="ColorRect2" type="ColorRect" parent="Node2D"]
+offset_left = -4.0
+offset_right = 5.0
+offset_bottom = 1.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Node2D"]
+offset_top = -4.0
+offset_right = 1.0
+offset_bottom = 5.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true

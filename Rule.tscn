@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx80c0gpx244x"]
+
+[ext_resource type="Script" path="res://Rule.gd" id="1_kc2k6"]
+[ext_resource type="Script" path="res://ExplanationButton.gd" id="2_tqsyj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqx2p"]
+font_size = 11
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_px5a0"]
+line_spacing = -2.0
+font_size = 9
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ag3an"]
+font_size = 6
+font_color = Color(0, 0, 1, 1)
+
+[node name="Rule" type="Node2D"]
+script = ExtResource("1_kc2k6")
+
+[node name="RuleTitle" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sudoku"
+label_settings = SubResource("LabelSettings_bqx2p")
+
+[node name="RuleDescription" type="Label" parent="."]
+offset_top = 13.0
+offset_right = 269.0
+offset_bottom = 93.0
+text = "Normal sudoku rules apply."
+label_settings = SubResource("LabelSettings_px5a0")
+autowrap_mode = 3
+
+[node name="ExplanationButton" type="ColorRect" parent="."]
+offset_right = 4.0
+offset_bottom = 9.0
+mouse_default_cursor_shape = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("2_tqsyj")
+
+[node name="Label" type="Label" parent="ExplanationButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "?"
+label_settings = SubResource("LabelSettings_ag3an")

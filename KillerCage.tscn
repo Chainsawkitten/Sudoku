@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvcwgxy1amlry"]
+
+[ext_resource type="Script" path="res://KillerCage.gd" id="1_i8aw1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kswku"]
+font_size = 7
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[node name="KillerCage" type="Node2D"]
+z_index = 2
+script = ExtResource("1_i8aw1")
+
+[node name="Total" type="Label" parent="."]
+z_index = 2
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_kswku")
